@@ -16,7 +16,9 @@
   "scripts": {
     "start": "node ./bin/http-server",
     "pretest": "common bin/http-server lib/ test",
-    "test": "vows --spec --isolate"
+    "test": "vows --spec --isolate",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "files": [
     "lib",
@@ -88,7 +90,8 @@
     "optimist": "~0.6.1",
     "portfinder": "^1.0.20",
     "secure-compare": "3.0.1",
-    "union": "~0.5.0"
+    "union": "~0.5.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "common-style": "^3.0.0",
@@ -103,5 +106,6 @@
   "bin": {
     "http-server": "./bin/http-server",
     "hs": "./bin/http-server"
-  }
+  },
+  "snyk": true
 }
